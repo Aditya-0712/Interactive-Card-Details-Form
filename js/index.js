@@ -186,8 +186,14 @@ function check(x)
     }
 }
 
+var form = document.getElementsByTagName("form");
+var mob_ty = document.getElementsByClassName("mob_thankyou")[0];
+
 function mob_sub()
 {
+    var f1,f2,f3;
+    f1=f2=f3=0;
+
     if (mob_cname.value == "")
     {
         mob_cname.style.borderColor = "red"; 
@@ -197,6 +203,7 @@ function mob_sub()
     {
         mob_cname.style.borderColor = "rgba(0, 0, 0, 0.3)"; 
         errors[0].style.display = "none";
+        f1=1;
     }
 
     if (mob_Cnum.value == "")
@@ -215,6 +222,7 @@ function mob_sub()
     {
         mob_Cnum.style.borderColor = "rgba(0, 0, 0, 0.3)"; 
         errors[1].style.display = "none";
+        f2=1;
     }
 
     errors[2].style.display = "none";
@@ -263,6 +271,11 @@ function mob_sub()
     {
         mob_cvv.style.borderColor = "rgba(0, 0, 0, 0.3)";
     }
+
+    if (errors[2].style.display == "none")
+    {
+        f3=1;
+    }
     
     for (let j=0; j<19; j++)
     {
@@ -272,14 +285,25 @@ function mob_sub()
             mob_Cnum.style.borderColor = "red"; 
             errors[1].innerHTML = "Wrong format, numbers only";
             errors[1].style.display = "flex";
+            f2=0;
             break;
         }
     }
+
+    if (f1==1 && f2==1 && f3==1)
+    {
+        form[0].style.display = "none";
+        mob_ty.style.display = "flex";
+    }
 }
 
+var pc_ty = document.getElementsByClassName("pc_thankyou")[0];
 
 function pc_sub()
 {
+    var f1,f2,f3;
+    f1=f2=f3=0;
+
     if (pc_cname.value == "")
     {
         pc_cname.style.borderColor = "red"; 
@@ -289,6 +313,7 @@ function pc_sub()
     {
         pc_cname.style.borderColor = "rgba(0, 0, 0, 0.3)"; 
         errors[3].style.display = "none";
+        f1=1;
     }
 
     if (pc_Cnum.value == "")
@@ -307,6 +332,7 @@ function pc_sub()
     {
         pc_Cnum.style.borderColor = "rgba(0, 0, 0, 0.3)"; 
         errors[4].style.display = "none";
+        f2=1;
     }
 
     errors[5].style.display = "none";
@@ -355,6 +381,11 @@ function pc_sub()
     {
         pc_cvv.style.borderColor = "rgba(0, 0, 0, 0.3)";
     }
+
+    if (errors[5].style.display == "none")
+    {
+        f3=1;
+    }
     
     for (let j=0; j<19; j++)
     {
@@ -364,7 +395,14 @@ function pc_sub()
             pc_Cnum.style.borderColor = "red"; 
             errors[4].innerHTML = "Wrong format, numbers only";
             errors[4].style.display = "flex";
+            f2=0;
             break;
         }
+    }
+
+    if (f1==1 && f2==1 && f3==1)
+    {
+        form[1].style.display = "none";
+        pc_ty.style.display = "flex";
     }
 }

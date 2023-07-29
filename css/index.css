@@ -146,7 +146,7 @@ input:focus
     outline: none;
 }
 
-.mob_form a, .pc_form a
+.mob_form a, .pc_form a, .mob_thankyou a, .pc_thankyou a
 {
     font:18px SpaceGrotesk-Medium;
     color:white;
@@ -164,6 +164,36 @@ input:focus
     margin:0px auto 0px 0px;
 }
 
+.mob_thankyou, .pc_thankyou
+{
+    display: none;
+    flex-direction: column;
+    margin:100px auto 0px auto;
+}
+
+.mob_thankyou img, .pc_thankyou img 
+{
+    width:75px;
+    height: 75px;
+    margin:0px auto 0px auto;
+}
+
+.mob_thankyou p:nth-child(2), .pc_thankyou p:nth-child(2)
+{
+    font:28px SpaceGrotesk-Bold;
+    color:hsl(278, 68%, 11%);
+    margin:40px auto 0px auto;
+    letter-spacing: 3px;
+}
+
+.mob_thankyou p:nth-child(3), .pc_thankyou p:nth-child(3)
+{
+    font:17px SpaceGrotesk-Medium;
+    color:rgb(152, 152, 152);
+    margin:20px auto 0px auto;
+    letter-spacing: 1px;
+}
+
 .pcmain
 {
     display:none;
@@ -171,7 +201,7 @@ input:focus
 
 @media screen and (min-width:800px)
 {
-    .topbar, .mob_form
+    .topbar, .mob_form, .mob_thankyou
     {
         display:none;
     }
@@ -216,7 +246,7 @@ input:focus
         font-size: 13px;
     }
 
-    .pc_form a 
+    .pc_form a, .pc_thankyou a
     {
         font-size: 13px;
         width: fit-content;
@@ -228,5 +258,10 @@ input:focus
     a:hover 
     {
         background-color: hsl(278, 68%, 26%);
+    }
+
+    .pc_thankyou 
+    {
+        margin-top: 150px;
     }
 }
