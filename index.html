@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Interactive Card Details</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/fonts.css">
+    </head>
+    <body>
+
+<!-- _______________________________________Mobile Design_____________________________________ -->
+        <div class="topbar">
+            <div class="cardBack">
+                <p>000</p>
+            </div>
+            <div class="cardFront">
+                <div class="circles">
+                    <svg height="1em" viewBox="0 0 512 512">
+                        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/>
+                    </svg>
+                    <svg height="1em" viewBox="0 0 512 512">
+                        <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+                    </svg>
+                </div>
+
+                <p class="cardNumber">0000 0000 0000 0000</p>
+
+                <div class="info">
+                    <p>JANE APPLESEED</p>
+                    <p>00</p>
+                    <p>/</p>
+                    <p>00</p>
+                </div>
+            </div>
+        </div>
+
+        <form autocomplete="off" class="mob_form" name="mob_form">
+            <p class="label">CARDHOLDER NAME</p>
+            <input type="text" name="Cname" placeholder="e.g. Jane Appleseed" style="width: 300px;" autocapitalize="words">
+            <p class="error">Can't be blank</p>
+
+            <p class="label" style="margin-top: 20px;">CARD NUMBER</p>
+            <input type="text" name="Cnum" placeholder="e.g. 1234 5678 9123 0000" style="width: 300px;" maxlength="19">
+            <p class="error">Wrong Format, numbers only</p>
+
+            <p class="label" style="margin-top: 20px;">EXP.DATE (MM/YY)  &nbsp&nbsp&nbsp&nbsp CVV</p>
+            <div>
+                <input type="number" name="mm" placeholder="MM" style="width: 45px;">
+                <input type="number" name="yy" placeholder="YY" style="width: 45px; margin-left: 10px;">
+                <input type="number" name="cvv" placeholder="e.g. 123" style="width: 135px; margin-left: 10px;">
+            </div>
+            <p class="error">Can't be blank</p>
+
+            <a href="#" onclick="mob_sub(); return false">Confirm</a>
+        </form>
+<!-- _______________________________________Mobile Design_____________________________________ -->
+
+<!-- ______________________________________PC Design__________________________________________ -->
+
+        <div class="pcmain">
+            <div class="left">
+                <div class="cardFront">
+                    <div class="circles">
+                        <svg height="1em" viewBox="0 0 512 512">
+                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/>
+                        </svg>
+                        <svg height="1em" viewBox="0 0 512 512">
+                            <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+                        </svg>
+                    </div>
+    
+                    <p class="cardNumber">0000 0000 0000 0000</p>
+    
+                    <div class="info">
+                        <p>JANE APPLESEED</p>
+                        <p>00</p>
+                        <p>/</p>
+                        <p>00</p>
+                    </div>
+                </div>
+                <div class="cardBack">
+                    <p>000</p>
+                </div>
+            </div>
+
+            <form autocomplete="off" class="pc_form">
+                <p class="label">CARDHOLDER NAME</p>
+                <input type="text" name="Cname" placeholder="e.g. Jane Appleseed" style="width: 300px;">
+                <p class="error">Can't be blank</p>
+    
+                <p class="label" style="margin-top: 20px;">CARD NUMBER</p>
+                <input type="text" name="Cnum" placeholder="e.g. 1234 5678 9123 0000" style="width: 300px;" maxlength="19">
+                <p class="error">Wrong Format, numbers only</p>
+                
+    
+                <p class="label" style="margin-top: 20px;">EXP.DATE (MM/YY)  &nbsp&nbsp&nbsp&nbsp CVV</p>
+                <div>
+                    <input type="number" name="mm" placeholder="MM" style="width: 45px;">
+                    <input type="number" name="yy" placeholder="YY" style="width: 45px; margin-left: 10px;">
+                    <input type="number" name="cvv" placeholder="e.g. 123" style="width: 135px; margin-left: 10px;">
+                </div>
+                <p class="error">Can't be blank</p>
+    
+                <a href="#">Confirm</a>
+            </form>
+        </div>
+
+<!-- ______________________________________PC Design___________________________________ -->
+
+        <script src="js/index.js"></script>
+    </body>
+</html>

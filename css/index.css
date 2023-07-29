@@ -1,0 +1,232 @@
+*{display: flex; -webkit-tap-highlight-color: transparent; text-decoration: none;}
+
+title{display: none;}
+
+body 
+{
+    flex-direction: column;
+    width:100%;
+    height: 100%;
+    margin:0;
+    font-size: 0;
+}
+
+.topbar
+{
+    background-image: url(../images/bg-main-mobile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    width:100%;
+    height: 240px;
+}
+
+.cardBack
+{   
+    background-image: url(../images/bg-card-back.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:290px;
+    height: 159px;
+    margin:30px 15px 0px auto;
+}
+
+.cardBack p 
+{
+    font:10.5px SpaceGrotesk-Regular;
+    color:white;
+    letter-spacing: 1px;
+    margin:72px 40px 75px auto;
+}
+
+.cardFront
+{   
+    flex-direction: column;
+    background-image: url(../images/bg-card-front.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:290px;
+    height: 159px;
+    margin:0px auto 0px 15px;
+    position: relative;
+    bottom:69px;
+}
+
+.circles
+{
+    margin: 20px auto 0px 20px;
+}
+
+.circles svg:nth-child(1)
+{
+    width:30px;
+    height: 30px;
+    fill:white;
+    margin:0;
+}
+
+.circles svg:nth-child(2)
+{
+    width:15px;
+    height: 15px;
+    fill:white;
+    margin:auto 0px auto 10px;
+}
+
+.cardNumber
+{
+    font:20px SpaceGrotesk-Regular;
+    color:white;
+    margin:35px auto 0px 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.info
+{
+    margin:15px auto 20px 20px;
+}
+
+.info p:nth-child(1)
+{
+    font:10px SpaceGrotesk-Light;
+    color:white;
+    margin:auto 0px auto 0px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.info p:nth-child(2), .info p:nth-child(3), .info p:nth-child(4)
+{
+    font:10px SpaceGrotesk-Light;
+    color:white;
+    margin:auto 0px auto 120px;
+    letter-spacing: 1px;
+}
+
+.info p:nth-child(3), .info p:nth-child(4)
+{
+    margin-left:0 ;
+}
+
+.mob_form, .pc_form
+{
+    flex-direction: column;
+    margin:80px auto 0px auto;
+}
+
+.label
+{
+    font:14px SpaceGrotesk-Medium;
+    color:hsl(278, 68%, 11%);
+    margin:0;
+    letter-spacing: 1px;
+}
+
+input[type="text"], input[type="number"]
+{
+    padding:15px 10px 12px 15px;
+    border-radius: 7px;
+    border:1px solid rgba(0, 0, 0, 0.3);
+    margin:5px 0px 0px 0px;
+    text-transform: uppercase;
+    font:15px SpaceGrotesk-SemiBold;
+}
+
+input::placeholder
+{
+    font:16px SpaceGrotesk-Medium;
+    color:rgb(193, 193, 193);
+    letter-spacing: 1px;
+    text-transform: none;
+}
+
+input:focus
+{
+    outline: none;
+}
+
+.mob_form a, .pc_form a
+{
+    font:18px SpaceGrotesk-Medium;
+    color:white;
+    background-color: hsl(278, 68%, 11%);
+    padding:15px 129px 15px 129px;
+    margin:30px auto 50px auto;
+    border-radius: 7px;
+}
+
+.error
+{
+    display: none;
+    font:10px SpaceGrotesk-Regular;
+    color:red;
+    margin:0px auto 0px 0px;
+}
+
+.pcmain
+{
+    display:none;
+}
+
+@media screen and (min-width:800px)
+{
+    .topbar, .mob_form
+    {
+        display:none;
+    }
+
+    .pcmain
+    {
+        display: flex;
+        width:100%;
+        height: 100vh;
+        margin:0;
+    }
+
+    .left
+    {
+        flex-direction: column;
+        background-image: url(/images/bg-main-desktop.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width:400px;
+        height: 100%;
+    }
+
+    .cardFront
+    {
+        bottom:0;
+        margin:100px 0px 0px 200px;
+    }
+
+    .cardBack
+    {
+        margin:25px 0px 0px 250px;
+    }
+
+    .pc_form
+    {
+        display: block;
+        margin:150px auto 0px auto;
+    }
+
+    input::placeholder
+    {
+        font-size: 13px;
+    }
+
+    .pc_form a 
+    {
+        font-size: 13px;
+        width: fit-content;
+        padding-left: 138px;
+        padding-right: 138px;
+        margin-bottom: 0;
+    }
+
+    a:hover 
+    {
+        background-color: hsl(278, 68%, 26%);
+    }
+}
