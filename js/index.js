@@ -172,7 +172,19 @@ pc_cvv.oninput = () => {
 
 var errors = document.getElementsByClassName("error");
 
-var pattern = new RegExp('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+arr = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","X","Y","Z"];
+
+function check(x)
+{
+    for (let i=0; i<arr.length; i++)
+    {
+        if (x == arr[i])
+        {
+            return true;
+            break;
+        }
+    }
+}
 
 function mob_sub()
 {
@@ -193,15 +205,166 @@ function mob_sub()
         errors[1].innerHTML = "Can't be blank";
         errors[1].style.display = "flex";
     }
-    else if (pattern.test(mob_Cnum.value) == true)
+    else if (mob_Cnum.value.length < 19)
     {
         mob_Cnum.style.borderColor = "red"; 
-        errors[1].innerHTML = "Wrong format, numbers only";
+        errors[1].innerHTML = "Should be a 16 digit number";
         errors[1].style.display = "flex";
     }
     else
     {
         mob_Cnum.style.borderColor = "rgba(0, 0, 0, 0.3)"; 
         errors[1].style.display = "none";
+    }
+
+    errors[2].style.display = "none";
+
+    if(mob_mm.value == "")
+    {
+        mob_mm.style.borderColor = "red";
+        errors[2].innerHTML = "Can't be blank";
+        errors[2].style.display = "flex";
+    }
+    else 
+    {
+        mob_mm.style.borderColor = "rgba(0, 0, 0, 0.3)";
+    }
+
+    if(mob_yy.value == "")
+    {
+        mob_yy.style.borderColor = "red";
+        errors[2].innerHTML = "Can't be blank";
+        errors[2].style.display = "flex";
+    }
+    else if(mob_yy.value.length<2)
+    {
+        mob_yy.style.borderColor = "red";
+        errors[2].innerHTML = "Should be a 2 digit number";
+        errors[2].style.display = "flex";
+    }
+    else 
+    {
+        mob_yy.style.borderColor = "rgba(0, 0, 0, 0.3)";
+    }
+
+    if(mob_cvv.value == "")
+    {
+        mob_cvv.style.borderColor = "red";
+        errors[2].innerHTML = "Can't be blank";
+        errors[2].style.display = "flex";
+    }
+    else if(mob_cvv.value.length<3)
+    {
+        mob_cvv.style.borderColor = "red";
+        errors[2].innerHTML = "Should be a 3 digit number";
+        errors[2].style.display = "flex";
+    }
+    else 
+    {
+        mob_cvv.style.borderColor = "rgba(0, 0, 0, 0.3)";
+    }
+    
+    for (let j=0; j<19; j++)
+    {
+        let res = check((mob_Cnum.value)[j].toUpperCase());
+        if (res == true)
+        {
+            mob_Cnum.style.borderColor = "red"; 
+            errors[1].innerHTML = "Wrong format, numbers only";
+            errors[1].style.display = "flex";
+            break;
+        }
+    }
+}
+
+
+function pc_sub()
+{
+    if (pc_cname.value == "")
+    {
+        pc_cname.style.borderColor = "red"; 
+        errors[3].style.display = "flex";
+    }
+    else
+    {
+        pc_cname.style.borderColor = "rgba(0, 0, 0, 0.3)"; 
+        errors[3].style.display = "none";
+    }
+
+    if (pc_Cnum.value == "")
+    {
+        pc_Cnum.style.borderColor = "red"; 
+        errors[4].innerHTML = "Can't be blank";
+        errors[4].style.display = "flex";
+    }
+    else if (pc_Cnum.value.length < 19)
+    {
+        pc_Cnum.style.borderColor = "red"; 
+        errors[4].innerHTML = "Should be a 16 digit number";
+        errors[4].style.display = "flex";
+    }
+    else
+    {
+        pc_Cnum.style.borderColor = "rgba(0, 0, 0, 0.3)"; 
+        errors[4].style.display = "none";
+    }
+
+    errors[5].style.display = "none";
+
+    if(pc_mm.value == "")
+    {
+        pc_mm.style.borderColor = "red";
+        errors[5].innerHTML = "Can't be blank";
+        errors[5].style.display = "flex";
+    }
+    else 
+    {
+        pc_mm.style.borderColor = "rgba(0, 0, 0, 0.3)";
+    }
+
+    if(pc_yy.value == "")
+    {
+        pc_yy.style.borderColor = "red";
+        errors[5].innerHTML = "Can't be blank";
+        errors[5].style.display = "flex";
+    }
+    else if(pc_yy.value.length<2)
+    {
+        pc_yy.style.borderColor = "red";
+        errors[5].innerHTML = "Should be a 2 digit number";
+        errors[5].style.display = "flex";
+    }
+    else 
+    {
+        pc_yy.style.borderColor = "rgba(0, 0, 0, 0.3)";
+    }
+
+    if(pc_cvv.value == "")
+    {
+        pc_cvv.style.borderColor = "red";
+        errors[5].innerHTML = "Can't be blank";
+        errors[5].style.display = "flex";
+    }
+    else if(pc_cvv.value.length<3)
+    {
+        pc_cvv.style.borderColor = "red";
+        errors[5].innerHTML = "Should be a 3 digit number";
+        errors[5].style.display = "flex";
+    }
+    else 
+    {
+        pc_cvv.style.borderColor = "rgba(0, 0, 0, 0.3)";
+    }
+    
+    for (let j=0; j<19; j++)
+    {
+        let res = check((pc_Cnum.value)[j].toUpperCase());
+        if (res == true)
+        {
+            pc_Cnum.style.borderColor = "red"; 
+            errors[4].innerHTML = "Wrong format, numbers only";
+            errors[4].style.display = "flex";
+            break;
+        }
     }
 }
